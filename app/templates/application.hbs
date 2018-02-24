@@ -1,5 +1,24 @@
 
-<h1 class="application-title">fun-client</h1>
+<nav>
+  <ul>
+    {{#if session.isAuthenticated}}
+      <li>
+        {{#link-to 'protected'}}Protected{{/link-to}}
+      </li>
+      <li>
+        <button {{action 'logout'}}>
+          Log out
+        </button>
+      </li>
+    {{else}}
+      <li>
+        <button {{action 'login'}}>
+          Log in with Google
+        </button>
+      </li>
+    {{/if}}
+  </ul>
+</nav>
 
 
 
